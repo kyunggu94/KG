@@ -141,3 +141,11 @@ body {
 .submit-btn:hover {
     background-color: #1976D2;
 }
+
+.comments-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--number-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
