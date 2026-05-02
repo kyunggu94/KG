@@ -1,11 +1,32 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: transparent;
+    --number-bg: #fff;
+    --number-text: #333;
+    --btn-bg: #4CAF50;
+    --btn-hover: #45a049;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --number-bg: #333;
+    --number-text: #fff;
+    --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -25,11 +46,13 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--number-bg);
+    color: var(--number-text);
     margin: 0 5px;
     font-size: 24px;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 #generate-btn {
@@ -37,12 +60,30 @@ body {
     font-size: 18px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: var(--btn-bg);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 #generate-btn:hover {
-    background-color: #45a049;
+    background-color: var(--btn-hover);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-btn {
+    padding: 8px 16px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
